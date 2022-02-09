@@ -1,0 +1,193 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage[english,russian]{babel}
+\usepackage[usenames]{color}
+
+\title{\textbf{CodeStyle}}
+\author{Седова Анна Алексеевна, группа ИА-032}
+
+\date{Февраль 2022}
+
+\begin{document}
+\maketitle
+\newpage
+\section{Введение:}
+Code Style используется для предоставления единых правил написания кода для конкретного проекта. Гораздо проще читать/писать/редактировать код, когда проект имеет единый стиль.
+\\
+\begin{center}
+    \LARGE\textbf{Code Style C++}\hline
+\end{center}
+
+\begin{itemize}
+    \item \Large\textbf{Пробелы и отступы}
+\end{itemize}
+\setcounter{section}{0}
+\section{Переменные с нового абзаца}
+В отступах используется tab (размер составляет 4 пробела)
+\begin{flushleft}
+\begin{tabular}{ |l| } 
+ \hline
+\textcolor{blue}{int} \textcolor{cyan}{x = 7;} \\
+\textcolor{blue}{double} \textcolor{cyan}{y = 5.17;} \\
+ \hline
+\end{tabular}
+\end{flushleft}
+\section{Отделять пробелами фигурные скобки}
+\begin{flushleft}
+\begin{tabular}{ |l| } 
+ \hline
+\\
+\textcolor{blue}{if} ( \textcolor{cyan}{x > y}  ) \{ \\
+\qquad ... \\
+\} \\ 
+\\
+ \hline
+\end{tabular}
+\end{flushleft}
+\section{Пробелы между операторами и операндами}
+\begin{flushleft}
+\begin{tabular}{ |l| } 
+ \hline
+\textcolor{blue}{int} \textcolor{cyan}{x }= (a + b) * c / d; \\
+ \hline
+\end{tabular}
+\end{flushleft}
+\begin{itemize}
+\vspace*{10mm}
+\hline
+    \item \Large\textbf{Названия и переменные}
+\end{itemize}
+\\-Дать переменным описательные имена;
+\\-Избегать однобуквенных названий (пример. x или c).
+\setcounter{section}{0}
+\section{Текстовая строка}
+\begin{flushleft}
+\begin{tabular}{ |l| } 
+ \hline
+\textcolor{blue}{string} str = \textcolor{green}{"Hello, World!";} \\
+\hline
+\end{tabular}
+\end{flushleft}
+\section{Ссылаться на const, а не на её значение}
+\begin{flushleft}
+\begin{tabular}{ |l| } 
+\hline
+    \textcolor{blue}{const int} AGE = 20;\\
+\hline
+\end{tabular}
+\end{flushleft}
+\section{Класс}
+-Класс следует объявлять в заголовочном файле (.h) и определять (реализовывать) в файле исходного кода (.cpp);\\
+-Имена файлов совпадают с именем класса.\\
+\begin{flushleft}
+\begin{tabular}{ |l| } 
+\hline
+\textcolor{blue}{class MyClass }\{\\
+\ \ \ \   ...\\
+\}\\
+\hline
+\end{tabular}
+\end{flushleft}
+    \begin{itemize}
+\vspace*{10mm}
+\hline
+    \item \Large\textbf{Базовые выражения}
+\end{itemize}
+\setcounter{section}{0}
+\section{Вывод на консоль}
+\begin{flushleft}
+\begin{tabular}{ |l| } 
+\hline
+cout << "Hello, world!" << endl;\\
+\hline
+\end{tabular}
+\end{flushleft}
+\section{Цикл for}
+Когда известно кол-во повторений\\
+\begin{flushleft}
+\begin{tabular}{ |l| } 
+\hline
+\textcolor{blue}{for }(int i = 0; i < 5; i++) \{\\
+\ \ \ \ ...\\
+\}\\
+\hline
+\end{tabular}
+\end{flushleft}
+\section{Цикл while}
+Когда неизвестно кол-во повторений\\
+\begin{flushleft}
+\begin{tabular}{ |l| } 
+\hline
+string str;\\
+\textcolor{green}{while } (input >> str) \{\\
+\ \ \ \ ...\\
+\}\\
+Повторяет, пока больше не будет строк\\
+\hline
+\end{tabular}
+\end{flushleft}
+
+\section{if/else, for, while}
+-Использовать \{\} и соответствующие отступы\\
+\begin{flushleft}
+\begin{tabular}{ |l| } 
+\hline
+\textcolor{green}{if }(size == 0) \{\\
+\ \ \ \ \textcolor{green}{return;}\\
+\} \textcolor{green}{else } \{\\
+\ \ \ \ \textcolor{green}{for }(int i = 0; i < 7; i++) \{\\
+\ \ \ \ ...\\
+\ \ \ \ \}\\
+\}\\
+\hline
+\end{tabular}
+\end{flushleft}
+\section{Логический тип}
+Не проверять значения логического типа, используя == или != с true или false\\
+\begin{flushleft}
+\begin{tabular}{ |l| } 
+\hline
+Плохая практика\\
+\textcolor{green}{if }(x == true) \{\\
+\ \ \ \ ...\\
+\} \textcolor{green}{else if }(x != true) \{\\
+\ \ \ \ ...\\
+\}\\
+\\
+Хорошая практика\\
+\textcolor{green}{if }(x) \{\\
+\ \ \ \ ...\\
+\} \textcolor{green}{else }\{\\
+\ \ \ \ ...\\
+\}\\
+\hline
+\end{tabular}
+\end{flushleft}
+
+\section{Имена функций}
+\\-Имя функции начинается с прописной буквы и каждое слово в имени пишется с прописной буквы;
+\\-Закрывающая скобка ставится ровно под своей функцией.
+\begin{flushleft}
+\begin{tabular}{ |l| } 
+\hline
+\textcolor{red}{void} \textcolor{blue}{AddTableEntry} ();\\
+\textcolor{red}{void} \textcolor{blue}{DeleteUrl} ();\\
+\textcolor{red}{void} \textcolor{blue}{OpenFileOrDie} ();\\
+\hline
+\end{tabular}
+\end{flushleft}
+\begin{itemize}
+\newpage
+\item\Large\textbf{Вывод}
+\end{itemize}
+Благодаря данной работе, я освоила команды LaTex и выполнила отчёт по основным правилам CodeStyle С++. 
+\begin{thebibliography}{3}
+\bibitem{1} 
+ISO/IEC 14882 Programming languages — C++.
+\bibitem{2} 
+Руководство Google по стилю в C++ : [electronic resource].
+URL : https://habr.com/ru/post/477722/ (Дата обращения: 09.02.2022)
+\bibitem{3}
+Осваиваем LaTeX за 30 минут : [electronic resource].
+URL : https://habr.com/ru/company/ruvds/blog/574352/ (Дата обращения: 09.02.2022)
+\end{thebibliography}
+\end{document}
